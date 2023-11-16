@@ -1,0 +1,73 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* checkBoxDiv를 flex 컨테이너로 만들고 항목들을 가운데 정렬합니다. */
+.checkBoxDiv {
+    display: flex;
+    justify-content: center; /* 가로 방향 가운데 정렬 */
+    align-items: center;     /* 세로 방향 가운데 정렬 */
+}
+
+/* 스위치와 텍스트가 있는 div를 하나의 flex 아이템으로 만듭니다. */
+.checkBoxDiv > div {
+    display: flex;
+    align-items: center; /* 체크박스와 텍스트를 세로 방향으로 가운데 정렬 */
+}
+
+/* 필요한 경우 체크박스와 텍스트 사이의 간격을 조정합니다. */
+.switch {
+    margin-right: 10px; /* 오른쪽에 여백 추가 */
+}
+
+.statusText {
+    margin-left: 10px;
+    font-size: 20px;
+}
